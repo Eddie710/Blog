@@ -1,0 +1,82 @@
+*{font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;}
+main {margin: 0 auto; padding: 20px;}
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.popular {
+  flex: 1;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.newsLetter {
+  flex: 1;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="text"], input[type="email"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+button[type="submit"] {
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.row2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.blogContainer {
+  flex: 1;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.blogImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.contBottom {padding: 10px;}
+p {font-weight: bold; margin: 0;}
+.cont-viewButton {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+#browseMore-buttonLink {
+  text-align: center;
+}
+#browseMore-buttonLink a {
+  text-decoration: none;
+}
+#browseMore-buttonLink button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}

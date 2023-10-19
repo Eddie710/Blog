@@ -8,6 +8,7 @@ const Header = () => (
       <button>Post</button>
       <button>About</button>
       <button>Contact</button>
+      <button>Sign Up</button>
     </nav>
   </header>
 );

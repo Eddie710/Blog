@@ -7,23 +7,24 @@ export default function MainPage() {
   return (
     <main>
       <div className="topRow">
-        <div className="popular">
+        <div className="popular, padding20">
           <span>
             Most Liked Blog or, Most Viewed or, Recently Added, Maybe a way to
             select, or its a slideshow that showcases them.
           </span>
         </div>
+        <div className="newsLetter">
+          <span>
+            Newsletter to sign recommend users to sign up if not signed in.
+          </span>
+          <form action="/users" method="POST" onSubmit={handleSubmit}>
+            <input type="text" name="name" placeholder="Name" />
+            <input type="email" name="email" placeholder="Email" />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </div>
-      <div className="newsLetter">
-        <span>
-          Newsletter to sign recommend users to sign up if not signed in.
-        </span>
-        <form action="/users" method="POST" onSubmit={handleSubmit}>
-          <input type="text" name="name" placeholder="Name" />
-          <input type="email" name="email" placeholder="Email" />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+
       <div className="row2">
         <div className="blogContainer">
           <img className="blogImg" src="..." alt=" blog image" />
@@ -49,7 +50,7 @@ export default function MainPage() {
       </div>
       <div id="browseMore-buttonLink">
         <a href="#" target="_blank">
-          <button>Browse More...</button>
+          <button id="browseButton">Browse More...</button>
         </a>
       </div>
     </main>

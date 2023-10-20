@@ -1,4 +1,6 @@
 import React from "react";
+import { Route, Routes, Link } from 'react-router-dom';
+import NewLetter from '../src/componets/Newsletter'
 export default function MainPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,11 +20,12 @@ export default function MainPage() {
         <span>
           Newsletter to sign recommend users to sign up if not signed in.
         </span>
-        <form action="/users" method="POST" onSubmit={handleSubmit}>
-          <input type="text" name="name" placeholder="Name" />
-          <input type="email" name="email" placeholder="Email" />
-          <button type="submit">Submit</button>
-        </form>
+        <div>
+          <p>Join the Newsletter!</p>
+          <Link to={"/create-post"} className="nav-link">
+           Sign Up
+          </Link> 
+          </div>
       </div>
       <div className="row2">
         <div className="blogContainer">
@@ -52,6 +55,7 @@ export default function MainPage() {
           <button>Browse More...</button>
         </a>
       </div>
+      
     </main>
   );
 }

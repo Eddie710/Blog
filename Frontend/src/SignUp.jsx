@@ -106,6 +106,7 @@ class SignupForm extends Component {
           </div>
           <div>
             <button type="submit">Sign Up</button>
+            {/* <button type="reset">Reset</button> */}
           </div>
         </form>
       </div>

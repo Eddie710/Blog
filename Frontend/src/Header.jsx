@@ -5,16 +5,11 @@ const Header = () => (
   <header>
     <nav>
       <img src="logo" alt="foodEaze logo" id="foodEaze-logo" />
-      <Link to={"/"} className="nav-link">
-           Home
-        </Link> 
-      <Link to={"/post-page"} className="nav-link">
-           Create Post
-      </Link>
+      <Link to={"/"} className="nav-link">Home</Link> 
+      <Link to={"/post-page"} className="nav-link">Create Post</Link>
+      <Link to={"/signup"} className="nav-link">Sign Up</Link>
     </nav>
   </header>
 );
 
 export default Header;
-
-

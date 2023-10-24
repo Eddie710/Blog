@@ -1,12 +1,17 @@
 header{
-    background-color: #CA282C;
+    background-color: #fff;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
 footer{
-    background-color: #CA282C;
+    background-color: #fff;
     width: 100%;
     padding: 20px;
 }

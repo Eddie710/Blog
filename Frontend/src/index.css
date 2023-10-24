@@ -1,5 +1,5 @@
 *{font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;}
-main{ padding: 25px; background-color: #3498DB; }
+main{ padding: 25px; background-color: #293646; }
 .container {display: flex; flex-wrap: wrap; justify-content: space-between;}
 .topRow {
   flex: 1;
@@ -20,13 +20,15 @@ main{ padding: 25px; background-color: #3498DB; }
   border-radius: 5px;
 }
 form {display: flex; flex-direction: column; gap: 10px;}
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="date"], input[type="email"], input[type="password"], input[type="email"], textarea {
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 200px;
 }
-input[type="text"]:focus, input[type="email"]:focus {background-color: #293646; color:white;}
-button[type="submit"] {
+input[type="text"]:focus, input[type="date"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {background-color: #293646; color:white;}
+textarea{ padding: 0.75rem;}
+button[type="submit"], button[type="reset"] {
   padding: 10px;
   background-color: #293646;
   color: #fff;
@@ -48,7 +50,7 @@ button[type="submit"] {
   padding:20px;
   text-align: center;
 }
-.blogImg {width: 100%; height: auto; display: block;}
+.blogImg {width: 300px; height: auto; display: block;}
 .contBottom {padding: 10px;}
 p {font-weight: bold; margin: 0;}
 .cont-viewButton {

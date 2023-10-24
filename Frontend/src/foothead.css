@@ -1,0 +1,12 @@
+header{
+    background-color: #CA282C;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer{
+    background-color: #CA282C;
+    width: 100%;
+    padding: 20px;
+}

@@ -9,7 +9,7 @@ export default function MainPage() {
   return (
     <main>
       <div className="topRow">
-        <div className="popular">
+        <div className="popular, padding20">
           <span>
             Most Liked Blog or, Most Viewed or, Recently Added, Maybe a way to
             select, or its a slideshow that showcases them.
@@ -52,7 +52,7 @@ export default function MainPage() {
       </div>
       <div id="browseMore-buttonLink">
         <a href="#" target="_blank">
-          <button>Browse More...</button>
+          <button id="browseButton">Browse More...</button>
         </a>
       </div>
       

@@ -1,21 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css'
-
-import { Router, Route} from 'react-router-dom';
-import Header from './Header.jsx';
-import MainPage from './MainPage.jsx';
-import Footer from './Footer.jsx';
-import PostPage from './PostPage.jsx'
+import Header from "./Header"
+import Footer from "./Footer"
+import MainPage from "./MainPage"
+import { Router, Routes, Route, Link} from 'react-router-dom'
+import NewLetter from "./componets/Newsletter.jsx";
+import NewBlog from './componets/Posts.jsx'
 
 function App() {
   return (
-    <Router>
-      
-        <Route path="/" component={MainPage} />
-        <Route path="/PostPage" component={PostPage} />
-      
-    </Router>
+    <>
+    <div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/create-post" element={<NewLetter />} />
+          <Route path="/post-page" element={<NewBlog />} />
+        </Routes>
+        <Footer />
+    </div>
+        
+    
+    </>
   );
 }
 

@@ -5,12 +5,18 @@ const userSchema = new Schema({
   name: {
     type: String,
   },
-  email: {
+  restaurant: {
     type: String,
   },
+  description: {
+    type: String,
+  },
+  review: {
+    type: String,
+  }
   
 }, {
-    collection: 'users'
+    collection: 'posts'
   });
 
-module.exports = mongoose.model('User', userSchema)
+module.exports = mongoose.model('Post', userSchema)

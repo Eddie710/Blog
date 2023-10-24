@@ -1,15 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header>
     <nav>
       <img src="logo" alt="foodEaze logo" id="foodEaze-logo" />
-      <button>Home</button>
-      <button>Post</button>
-      <button>About</button>
-      <button>Contact</button>
+      <Link to={"/"} className="nav-link">
+           Home
+        </Link> 
+      <Link to={"/post-page"} className="nav-link">
+           Create Post
+      </Link>
     </nav>
   </header>
 );
 
 export default Header;
+
+

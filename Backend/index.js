@@ -2,7 +2,6 @@ let express = require("express");
 let mongoose = require("mongoose");
 let cors = require("cors");
 let bodyParser = require("body-parser");
-
 const BlogRoute = require("./routes/blog.routes.js");
 
   mongoose
@@ -25,14 +24,15 @@ const BlogRoute = require("./routes/blog.routes.js");
     }),
   );
   app.use(cors());
-  app.set("/blogs", BlogRoute);
+  app.use("/users", BlogRoute);
+  app.use("/posts", BlogRoute);
 
   const port = process.env.PORT || 3000;
     const server = app.listen(port, () => {
   console.log("Connected to port " + port);
 });
 
-/* app.use((req, res, next) => {
+app.use((req, res, next) => {
     next(createError(404));
   });
   
@@ -41,4 +41,4 @@ const BlogRoute = require("./routes/blog.routes.js");
     if (!err.statusCode) err.statusCode = 500;
     res.status(err.statusCode).send(err.message);
   });
- */
+ 

@@ -32,7 +32,7 @@ const BlogRoute = require("./routes/blog.routes.js");
   console.log("Connected to port " + port);
 });
 
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
     next(createError(404));
   });
   
@@ -41,4 +41,4 @@ app.use((req, res, next) => {
     if (!err.statusCode) err.statusCode = 500;
     res.status(err.statusCode).send(err.message);
   });
- 
+  */

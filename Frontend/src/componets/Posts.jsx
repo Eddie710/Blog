@@ -33,7 +33,7 @@ function NewBlog() {
   };
 
 
-useEffect(() => {}, []);
+// useEffect(() => {}, []);
 return(  
     <div className="formContainer">
         <form onSubmit={onSubmit}>

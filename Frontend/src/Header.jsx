@@ -11,6 +11,9 @@ const Header = () => (
       <Link to={"/post-page"} className="nav-link">
            Create Post
       </Link>
+      <Link to={"/posted-blogs"} className="nav-link">
+            Browse Blogs
+      </Link>
     </nav>
   </header>
 );

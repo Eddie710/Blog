@@ -36,5 +36,32 @@ router.route("/post-page").post(async (req, res, next) => {
     });
 });
 
+router.route("/blogs").get(async (req, res, next) => {
+  await postSchema
+    .find()
+    .then((result) => {
+      res.json({
+        data: result.reverse(),
+        message: "Data successfully got!",
+        status: 200,
+      });
+    })
+    .catch((err) => {
+      return next(err);
+    });
+});
+
+router.route("/delete-student/:id").delete(async (req, res, next) => {
+  await postSchema
+    .findByIdAndRemove(req.params.id)
+    .then(() => {
+      res.json({
+        msg: "Data successfully deleted.",
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 module.exports = router;

@@ -34,7 +34,8 @@ function PostBlog() {
                     <div>
                         <h2>{post.name}</h2>
                         <p>{post.restaurant}</p>
-                        <p>{post.rating}</p>
+                        <p>{post.review}</p>
+                        <Link to={`/browse`}>Read More</Link>
                     </div>
                 )
         })}

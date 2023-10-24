@@ -51,6 +51,25 @@ router.route("/blogs").get(async (req, res, next) => {
     });
 });
 
+router.route("/browse/:id").get(async (req, res, next) => {
+  let postID  = req.params.id
+  
+  await postSchema
+    .findById({
+      _id : postID
+    })
+    .then((result) => {
+      res.json({
+        data: result,
+        message: "Data successfully got!",
+        status: 200,
+      });
+    })
+    .catch((err) => {
+      return next(err);
+    });
+});
+
 router.route("/delete-student/:id").delete(async (req, res, next) => {
   await postSchema
     .findByIdAndRemove(req.params.id)

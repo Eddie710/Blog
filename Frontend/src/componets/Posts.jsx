@@ -9,7 +9,6 @@ function NewBlog() {
     review: ""
 
   });
-
   const inputsHandler = (e) => {
     setNewPost((prevNext) => ({
       ...prevNext,
@@ -31,7 +30,7 @@ function NewBlog() {
         });
       });
   };
-
+  
 
 // useEffect(() => {}, []);
 return(  

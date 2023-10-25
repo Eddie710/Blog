@@ -2,7 +2,6 @@
 main{ padding: 25px; background-color: #293646; }
 .container {display: flex; flex-wrap: wrap; justify-content: space-between;}
 .topRow {
-  flex: 1;
   display: flex;
   flex-direction: row;
   padding: 10px;
@@ -19,7 +18,15 @@ main{ padding: 25px; background-color: #293646; }
   border: 1px solid #ddd;
   border-radius: 5px;
 }
-form {display: flex; flex-direction: column; gap: 10px;}
+.formContainer{ display: flex; justify-content: center; align-items: center; background-color: #293646; padding:20px;}
+form { display: flex; flex-direction: column; gap: 10px; background-color: white; color:black; width: 50vw; border-radius: 10px; }
+form div{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  justify-content: center;
+}
+#aboutYourself{ width: 500px; height: 250px;}
 input[type="text"], input[type="date"], input[type="email"], input[type="password"], input[type="email"], textarea {
   padding: 15px;
   border: 1px solid #ccc;

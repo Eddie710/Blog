@@ -6,7 +6,6 @@ import Footer from "./Footer"
 import MainPage from "./MainPage"
 import PostBlog from "./componets/Blogs"
 import View from "./componets/View"
-import SignUpForm from "./SignUp"
 import { Router, Routes, Route, Link} from 'react-router-dom'
 import NewLetter from "./componets/Newsletter.jsx";
 import NewBlog from './componets/Posts.jsx'
@@ -21,8 +20,8 @@ function App() {
           <Route path="/create-post" element={<NewLetter />} />
           <Route path="/post-page" element={<NewBlog />} />
           <Route path="/posted-blogs" element={<PostBlog />} />
-          <Route path="/signup" element={<SignUpForm />} />
           <Route path="/browse" element={<View />} />
+          <Route path="/newsletter" element={<NewLetter />} />
         </Routes>
         <Footer />
     </div>

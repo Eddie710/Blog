@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes, Link } from 'react-router-dom';
 import NewLetter from '../src/componets/Newsletter'
+
 export default function MainPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,25 +36,11 @@ export default function MainPage() {
             <button className="cont-viewButton">View</button>
           </div>
         </div>
-        <div className="blogContainer">
-          <img className="blogImg" src="..." alt=" blog image" />
-          <div className="contBottom">
-            <p>Blog Name:</p>
-            <button className="cont-viewButton">View</button>
-          </div>
-        </div>
-        <div className="blogContainer">
-          <img className="blogImg" src="..." alt=" blog image" />
-          <div className="contBottom">
-            <p>Blog Name:</p>
-            <button className="cont-viewButton">View</button>
-          </div>
-        </div>
       </div>
       <div id="browseMore-buttonLink">
-        <a href="#" target="_blank">
-          <button id="browseButton">Browse More...</button>
-        </a>
+      <Link to={"/create-post"} className="nav-link">
+           Browse More
+          </Link> 
       </div>
       
     </main>

@@ -9,7 +9,6 @@ function NewBlog() {
     review: ""
 
   });
-
   const inputsHandler = (e) => {
     setNewPost((prevNext) => ({
       ...prevNext,
@@ -31,7 +30,7 @@ function NewBlog() {
         });
       });
   };
-
+  
 
 // useEffect(() => {}, []);
 return(  
@@ -59,8 +58,7 @@ return(
             </div>
             <div>
             <label htmlFor="restaurantDescription">Restaurant Description</label>
-                <input 
-                type="text"
+                <textarea 
                 name="description" 
                 id="description" 
                 value={newPost.description}

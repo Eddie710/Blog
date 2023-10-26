@@ -10,24 +10,23 @@ export default function MainPage() {
   return (
     <main>
       <div className="topRow">
-        <div className="popular, padding20">
-          <span>
-            Most Liked Blog or, Most Viewed or, Recently Added, Maybe a way to
-            select, or its a slideshow that showcases them.
-          </span>
-        </div>
-      </div>
-      <div className="newsLetter">
-        <span>
-          Newsletter to sign recommend users to sign up if not signed in.
-        </span>
-        <div>
-          <p>Join the Newsletter!</p>
-          <Link to={"/create-post"} className="nav-link">
-           Sign Up
-          </Link> 
+          <div className="popular, padding20">
+            <span>
+              Most Liked Blog or, Most Viewed or, Recently Added, Maybe a way to
+              select, or its a slideshow that showcases them.
+            </span>
+          </div>
+          <div className="newsLetter">
+            <span>
+              Newsletter to sign recommend users to sign up if not signed in.
+            </span>
+            <div>
+                <p>Join the Newsletter!</p>
+                <Link to={"/newsletter"}>Sign Up</Link> 
+            </div>
           </div>
       </div>
+
       <div className="row2">
         <div className="blogContainer">
           <img className="blogImg" src="..." alt=" blog image" />
@@ -37,11 +36,7 @@ export default function MainPage() {
           </div>
         </div>
       </div>
-      <div id="browseMore-buttonLink">
-      <Link to={"/create-post"} className="nav-link">
-           Browse More
-          </Link> 
-      </div>
+      <div id="browseMore-buttonLink"><Link to={"/create-post"}>Browse More</Link></div>
       
     </main>
   );

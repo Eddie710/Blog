@@ -30,9 +30,9 @@ class SignupForm extends Component {
   };
   render() {
     return (
-      <div>
-        <h2>Sign Up</h2>
+      <div class="formContainer">
         <form onSubmit={this.handleSubmit}>
+          <h2>Sign Up</h2>
           <div>
             <label htmlFor="name">Name:</label>
             <input
@@ -84,16 +84,7 @@ class SignupForm extends Component {
             />
           </div>
           <div>
-            <label htmlFor="profilePicture">
-              Upload Profile Picture (optional):
-            </label>
-            <input
-              type="file"
-              id="profilePicture"
-              name="profilePicture"
-              accept="image/*"
-              onChange={this.handleImageChange}
-            />
+            
           </div>
           <div>
             <label htmlFor="aboutYourself">About Yourself (optional):</label>

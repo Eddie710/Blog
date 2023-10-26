@@ -1,31 +1,39 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { useParams } from "react-router-dom";
 
-function ViewBlog(){
-    const [post, setPost] = useState(null)
+function ViewBlog() {
+    const [post, setPost] = useState({});
+    const { postId } = useParams();
 
     useEffect(() => {
-        try {
-            axios
-                .get("http://localhost:3000/posts/browse/" + post._id)
-                .then(res => {
-                    setPost(res.data)
-                    console.log(post)
-                })
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`http://localhost:3000/posts/browse/${postId}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                setPost(data);
+              
+            } catch (error) {
+                console.error(error);
+            }
+        };
 
-        }
-        catch(err) {
-            console.error(err);
-        }
-    }, [])
-
-    return(
+        fetchData()
+    }, []);
+    console.log(post)
+    if(!post){
+        return null
+    }
+    return (
         <div>
-            hello
+            
+            <h1>{post.data.name}</h1>
+            
+            
         </div>
-    )
-
+    );
 }
 
-
-export default ViewBlog
+export default ViewBlog;

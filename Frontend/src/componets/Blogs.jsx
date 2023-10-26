@@ -1,20 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
 function PostBlog() {
   const [newPost, setNewPost] = useState([]);
-
-  const DeleteBlog = (_id) => {
-    axios
-      .delete("http://localhost:3000/posts/delete-student/" + _id)
-      .then(() => {
-        console.log("Data successfully deleted!");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+//   const { postId } = useParams().postId
 
   useEffect(() => {
     axios
@@ -25,21 +15,26 @@ function PostBlog() {
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []); // Add an empty dependency array to run the effect only once
+
+  // Find the selected post based on postId
+//   const selectedPost = newPost.find((post) => post.id === postId);
+
+  if (!newPost) {
+    return <div>Post not found.</div>;
+  } 
+  console.log(newPost)
 
   return (
     <div>
-        {newPost.map(post => {
-            return (
-                    <div>
-                        <h2>{post.name}</h2>
-                        <p>{post.restaurant}</p>
-                        <p>{post.review}</p>
-                        <Link to={`/browse`}>Read More</Link>
-                    </div>
-                )
-        })}
+      {newPost.map((e,i)=>{
+        return <h1 key={i}>
+            {e.name}
+            <Link to={`/browse/${e._id}`}>Read More</Link> 
+        </h1>
+      })}
     </div>
-)};
+  );
+}
 
 export default PostBlog;

@@ -22,7 +22,7 @@ function App() {
           <Route path="/post-page" element={<NewBlog />} />
           <Route path="/posted-blogs" element={<PostBlog />} />
           <Route path="/signup" element={<SignUpForm />} />
-          <Route path="/browse" element={<View />} />
+          <Route path="/browse/:postId" element={<View />} />
         </Routes>
         <Footer />
     </div>

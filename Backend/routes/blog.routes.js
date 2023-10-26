@@ -51,11 +51,11 @@ router.route("/blogs").get(async (req, res, next) => {
     });
 });
 
-router.route("/browse/:id").get(async (req, res, next) => {
+router.route("/browse/:id").get(async (req, res) => {
   let postID  = req.params.id
   
   await postSchema
-    .findById({
+    .find({
       _id : postID
     })
     .then((result) => {
@@ -66,7 +66,7 @@ router.route("/browse/:id").get(async (req, res, next) => {
       });
     })
     .catch((err) => {
-      return next(err);
+      console.error(err)
     });
 });
 

@@ -40,8 +40,9 @@ return(
                 <label htmlFor="blogName">Blog Name: </label>
                 <input 
                 type="text"
-                name="name" 
-                id="name" 
+                name="name"
+                placeHolder="blog name" 
+                id="name"
                 value={newPost.name}
                 onChange={inputsHandler}
                 required />
@@ -51,6 +52,7 @@ return(
                 <input 
                 type="text"
                 name="restaurant" 
+                placeHolder="e.g; mcdonalds" 
                 id="restaurant" 
                 value={newPost.restaurant}
                 onChange={inputsHandler}
@@ -61,6 +63,7 @@ return(
                 <textarea 
                 name="description" 
                 id="description" 
+                placeHolder="this restaurant..." 
                 value={newPost.description}
                 onChange={inputsHandler}
                 required />
@@ -70,12 +73,15 @@ return(
                 <input
                 type="text"
                 name="review" 
+                placeHolder="scale of 1-10 /10" 
                 id="review" 
                 value={newPost.review}
                 onChange={inputsHandler}
                 required />
             </div>
+            <div>
                 <button type="submit">Post</button>
+            </div>
         </form>
     </div>   
 

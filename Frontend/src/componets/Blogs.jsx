@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import '../Blogs.css'
 
 function PostBlog() {
   const [newPost, setNewPost] = useState([]);
@@ -26,12 +27,12 @@ function PostBlog() {
   console.log(newPost)
 
   return (
-    <div>
+    <div className="blogsContainer">
       {newPost.map((e,i)=>{
-        return <h1 key={i}>
-            {e.name}
-            <Link to={`/browse/${e._id}`}>Read More</Link> 
-        </h1>
+        return <div className="indvBlog-cont">
+          <h1 key={i}>{e.name}</h1>
+          <Link to={`/browse/${e._id}`}><button id="moreButton">Read More</button></Link> 
+        </div>
       })}
     </div>
   );

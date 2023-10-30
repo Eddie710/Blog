@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = () => (
   <header>
     <nav>
-      <img src="./foodeaze_logo.png" alt="foodEaze logo" id="foodEaze-logo" />
+      <img src=".c/foodeaze_logo.png" alt="foodEaze logo" id="foodEaze-logo" />
       <Link to={"/"} className="nav-link">
            Home
         </Link> 

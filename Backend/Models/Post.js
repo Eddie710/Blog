@@ -13,7 +13,10 @@ const userSchema = new Schema({
   },
   review: {
     type: String,
-  }
+  },
+  imageURL:{
+    type: String,
+}
   
 }, {
     collection: 'posts'

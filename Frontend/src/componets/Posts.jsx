@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function NewBlog() {
+  const cloud_name="dgq5ru9fd"
   const [newPost, setNewPost] = useState({
     name: "",
     restaurant: "",
     description: "",
-    review: ""
+    review: "",
+    imageURL:''
 
   });
   const inputsHandler = (e) => {
@@ -15,6 +17,23 @@ function NewBlog() {
       [e.target.name]: e.target.value,
     }));
   };
+
+  const cloudHandler = (e) => {
+    const formData = new FormData(); 
+       
+    formData.append('file', e.target.files[0]);
+    formData.append("upload_preset", 'Blogimages');
+ 
+ 
+  axios.post(`https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`, formData)
+      .then((res) => {      
+        const imageurl = res.data.secure_url;
+        newPost.imageURL=imageurl
+          setImage(imageurl)
+ 
+      })      
+  }
+ 
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +45,8 @@ function NewBlog() {
             name: "",
             restaurant: "",
             description: "",
-            review: ""
+            review: "",
+            imageURL:""
         });
       });
   };
@@ -79,6 +99,14 @@ return(
                 onChange={inputsHandler}
                 required />
             </div>
+            <label htmlFor="imageUrl"> Upload Image</label>
+            <input 
+            type="file" 
+            className="form-control"
+            name="image" 
+            id="image"
+            onChange={cloudHandler}
+            onSubmit={inputsHandler} />
             <div>
                 <button type="submit">Post</button>
             </div>

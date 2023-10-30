@@ -20,7 +20,7 @@ function App() {
           <Route path="/create-post" element={<NewLetter />} />
           <Route path="/post-page" element={<NewBlog />} />
           <Route path="/posted-blogs" element={<PostBlog />} />
-          {/* <Route path="/signup" element={<SignUpForm />} /> */}
+          <Route path="/newsletter" element={<NewLetter />} />
           <Route path="/browse/:postId" element={<View />} />
         </Routes>
         <Footer />

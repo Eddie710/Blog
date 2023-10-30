@@ -8,36 +8,59 @@ export default function MainPage() {
     console.log("");
   };
   return (
-    <main>
-      <div className="topRow">
-          <div className="popular, padding20">
-            <span>
-              Most Liked Blog or, Most Viewed or, Recently Added, Maybe a way to
-              select, or its a slideshow that showcases them.
-            </span>
-          </div>
-          <div className="newsLetter">
-            <span>
-              Newsletter to sign recommend users to sign up if not signed in.
-            </span>
-            <div>
-                <p>Join the Newsletter!</p>
-                <Link to={"/newsletter"}>Sign Up</Link> 
+    <>
+      <div className="headerBanner">
+        <img className="headImg" src="../public/header.png" />
+      </div>
+      <main>
+        <div className="topRow">
+            <div className="popular">
+              <div>
+                <h3>FoodEaze</h3>
+                <p>Welcome to <b>FoodEaze</b>, your one-stop destination for all things delicious in Arizona! Here, you can easily share your culinary adventures by uploading blog posts about restaurants across the Grand Canyon State. Join our community of food enthusiasts and let your taste buds guide the way. Discover, savor, and share the flavors of Arizona on FoodEaze!</p>
+              </div>
+            </div>
+            <div className="newsLetter">
+              <b>Join the Newsletter!</b>
+              <p>
+                Interested in receiving news letters via email? Click below to sign up!
+              </p>
+              <div><Link to={"/newsletter"}>Sign Up</Link></div>
+            </div>
+        </div>
+
+        <div className="row2">
+          <div className="blogContainer">
+            <img className="blogImg" src="../public/stock.jpg" alt=" blog image" />
+            <div className="contBottom">
+              <b>Blog Name</b>
+              <p>Blog Author</p>
+              <button className="cont-viewButton">Read more</button>
             </div>
           </div>
-      </div>
-
-      <div className="row2">
-        <div className="blogContainer">
-          <img className="blogImg" src="..." alt=" blog image" />
-          <div className="contBottom">
-            <p>Blog Name:</p>
-            <button className="cont-viewButton">View</button>
+          <div className="blogContainer">
+            <img className="blogImg" src="../public/stock.jpg" alt=" blog image" />
+            <div className="contBottom">
+              <b>Blog Name</b>
+              <p>Blog Author</p>
+              <button className="cont-viewButton">Read more</button>
+            </div>
+          </div>
+          <div className="blogContainer">
+            <img className="blogImg" src="../public/stock.jpg" alt=" blog image" />
+            <div className="contBottom">
+              <b>Blog Name</b>
+              <p>Blog Author</p>
+              <button className="cont-viewButton">Read more</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div id="browseMore-buttonLink"><Link to={"/create-post"}>Browse More</Link></div>
-      
-    </main>
+        <div id="browseMore-buttonLink">
+          <Link to={"/posted-blogs"}>
+            <button id="moreButton">Browse More</button>
+          </Link>
+        </div>
+      </main>
+    </>
   );
 }

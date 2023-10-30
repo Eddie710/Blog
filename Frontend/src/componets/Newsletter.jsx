@@ -5,7 +5,7 @@ function NewLetter() {
   const [newsForm, setNewsForm] = useState({
     name: "",
     email: "",
-   
+
   });
 
   const inputsHandler = (e) => {
@@ -24,24 +24,25 @@ function NewLetter() {
         setNewsForm({
           name: "",
           email: "",
-         
+
         });
       });
   };
 
 
-useEffect(() => {}, []);
-return(
+  useEffect(() => { }, []);
+  return (
 
-<div>
-<div className="form-wrapper">
-<form onSubmit={onSubmit}>
-<div className="mb-3">
+    <div>
+      <div className="form-wrapper">
+        <form onSubmit={onSubmit}>
+          <div className="mb-3">
             <label className="form-label">Name</label>
             <input
               type="text"
               className="form-control"
               name="name"
+              placeHolder="name" 
               id="name"
               value={newsForm.name}
               onChange={inputsHandler}
@@ -55,6 +56,7 @@ return(
               type="text"
               className="form-control"
               name="email"
+              placeHolder="email@email.com" 
               id="email"
               value={newsForm.email}
               onChange={inputsHandler}
@@ -65,10 +67,11 @@ return(
               Submit
             </button>
           </div>
-    </form>
-</div>
-</div>
+        </form>
+      </div>
+    </div>
 
-);}
+  );
+}
 
 export default NewLetter;

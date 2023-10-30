@@ -1,5 +1,5 @@
 header{
-    background-color: #fff;
+    background-color: #ccc;
     height: 100px;
     display: flex;
     align-items: center;
@@ -25,8 +25,12 @@ nav{
 }
 .nav-link:hover{ background-color: #333; color:white; transition:0.3s; }
 footer{
-    background-color: #fff;
+    background-color: #ccc;
     width: 100%;
+    min-height: 100px;
     padding: 20px;
 }
 #foodEaze-logo{ width: 80px; }
+@media screen and (max-width:500px){
+    #foodEaze-logo{display:none;}
+}

@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes, Link } from 'react-router-dom';
-import NewLetter from '../src/componets/Newsletter'
 
 export default function MainPage() {
   const handleSubmit = (e) => {
@@ -28,7 +27,7 @@ export default function MainPage() {
               <div><Link to={"/newsletter"}>Sign Up</Link></div>
             </div>
         </div>
-
+        <h3 style={{color: "white", fontSize: "30px"}}>Popular Blogs</h3>
         <div className="row2">
           <div className="blogContainer">
             <img className="blogImg" src="../public/stock.jpg" alt=" blog image" />

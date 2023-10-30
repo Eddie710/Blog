@@ -9,6 +9,7 @@ import View from "./componets/View"
 import { Router, Routes, Route, Link} from 'react-router-dom'
 import NewLetter from "./componets/Newsletter.jsx";
 import NewBlog from './componets/Posts.jsx'
+import SignupForm from './SignUp.jsx'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/posted-blogs" element={<PostBlog />} />
           <Route path="/newsletter" element={<NewLetter />} />
           <Route path="/browse/:postId" element={<View />} />
+          <Route path="/signup" element={<SignupForm />} />
         </Routes>
         <Footer />
     </div>

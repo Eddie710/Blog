@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import './Newsletter.css'
 function NewLetter() {
   const [newsForm, setNewsForm] = useState({
     name: "",
@@ -32,12 +32,11 @@ function NewLetter() {
 
   useEffect(() => { }, []);
   return (
-
     <div>
       <div className="form-wrapper">
         <form onSubmit={onSubmit}>
           <div className="mb-3">
-            <label className="form-label">Name</label>
+            <label className="form-label"><b>Name:</b></label>
             <input
               type="text"
               className="form-control"
@@ -51,7 +50,7 @@ function NewLetter() {
 
 
           <div className="mb-3">
-            <label className="form-label">Email</label>
+            <label className="form-label"><b>Email:</b></label>
             <input
               type="text"
               className="form-control"

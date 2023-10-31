@@ -99,15 +99,17 @@ return(
                 onChange={inputsHandler}
                 required />
             </div>
-            <label htmlFor="imageUrl"> Upload Image</label>
-            <input 
-            type="file" 
-            className="form-control"
-            name="image" 
-            id="image"
-            onChange={cloudHandler}
-            onSubmit={inputsHandler} />
             <div>
+              <label htmlFor="imageUrl"> Upload Image</label>
+              <input 
+              type="file" 
+              className="form-control"
+              name="image" 
+              id="image"
+              onChange={cloudHandler}
+              onSubmit={inputsHandler} />
+            </div>
+              <div>
                 <button type="submit">Post</button>
             </div>
         </form>

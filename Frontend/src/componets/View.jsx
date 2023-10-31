@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import './View.css'
 function ViewBlog() {
     const [post, setPost] = useState([]);
     const { postId } = useParams();
@@ -29,15 +29,19 @@ function ViewBlog() {
     }
     console.log(post)
     return (
-        <div>
-            <img 
-            src={post.imageURL}
-            alt="images" width="400px" height="400px"/>
-            <h1>{post.name}</h1>
-            <h2>{post.restaurant}</h2>
-            <h2>{post.description}</h2>
-            <h2>{post.review}</h2>
-        </div>
+        <>
+            <div className="PostContainer">
+                <div className="PostContainerB">
+                    <img 
+                    src={post.imageURL}
+                    alt="images" width="400px" height="400px" id="postImg" />
+                    <h1>{post.name}</h1>
+                    <h2>{post.restaurant}</h2>
+                    <p>{post.description}</p>
+                    <b>{post.review}</b>
+                </div>
+            </div>
+        </>
     );
 }
 

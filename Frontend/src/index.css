@@ -98,7 +98,6 @@ p {margin: 0;}
 #browseMore-buttonLink button:hover{ background-color: #293646; color:white; transition: 0.3s; }
 #browseMore-buttonLink a {text-decoration: none;}
 #description{width: 400px; height: 200px;}
-
 @media screen and (max-width: 500px){
   .headerBanner{ display: none;}
 }

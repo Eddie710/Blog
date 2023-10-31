@@ -10,6 +10,7 @@ import { Router, Routes, Route, Link} from 'react-router-dom'
 import NewLetter from "./componets/Newsletter.jsx";
 import NewBlog from './componets/Posts.jsx'
 import SignupForm from './SignUp.jsx'
+import Login from './Login.jsx'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/newsletter" element={<NewLetter />} />
           <Route path="/browse/:postId" element={<View />} />
           <Route path="/signup" element={<SignupForm />} />
+          <Route path="login" element={<Login />}/>
         </Routes>
         <Footer />
     </div>

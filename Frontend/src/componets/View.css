@@ -1,0 +1,13 @@
+.PostContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #293646;
+}
+.PostContainerB{
+    background-color: white;
+    width: 500px;
+    padding: 20px;
+}
+#postImg{width: 200px; height: auto;}

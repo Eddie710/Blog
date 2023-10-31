@@ -32,7 +32,7 @@ export default function MainPage() {
           <div className="blogContainer">
             <img className="blogImg" src="../public/stock.jpg" alt=" blog image" />
             <div className="contBottom">
-              <b>Blog Name</b>
+              <b>Popular Blog #1</b>
               <p>Blog Author</p>
               <button className="cont-viewButton">Read more</button>
             </div>
@@ -40,7 +40,7 @@ export default function MainPage() {
           <div className="blogContainer">
             <img className="blogImg" src="../public/stock.jpg" alt=" blog image" />
             <div className="contBottom">
-              <b>Blog Name</b>
+              <b>Popular Blog #2</b>
               <p>Blog Author</p>
               <button className="cont-viewButton">Read more</button>
             </div>
@@ -48,7 +48,7 @@ export default function MainPage() {
           <div className="blogContainer">
             <img className="blogImg" src="../public/stock.jpg" alt=" blog image" />
             <div className="contBottom">
-              <b>Blog Name</b>
+              <b>Popular Blog #3</b>
               <p>Blog Author</p>
               <button className="cont-viewButton">Read more</button>
             </div>

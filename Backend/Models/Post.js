@@ -19,7 +19,8 @@ const userSchema = new Schema({
 }
   
 }, {
-    collection: 'posts'
+    collection: 'posts',
+    timestamps:true
   });
 
 module.exports = mongoose.model('Post', userSchema)

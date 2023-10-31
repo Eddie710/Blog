@@ -24,7 +24,7 @@ const BlogRoute = require("./routes/blog.routes.js");
     }),
   );
   app.use(cors());
-  // app.use("/users", BlogRoute);
+  app.use("/users", BlogRoute);
   app.use("/posts", BlogRoute);
 
   const port = process.env.PORT || 3000;

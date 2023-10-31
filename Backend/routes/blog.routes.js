@@ -6,7 +6,7 @@ let mongoose = require("mongoose"),
 let blogSchema = require("../Models/Blog");
 let postSchema = require("../Models/Post");
 
-router.route("/create-post").post(async (req, res, next) => {
+router.route("/create-user").post(async (req, res, next) => {
   await blogSchema
     .create(req.body)
     .then((result) => {

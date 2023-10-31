@@ -1,100 +1,125 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-class SignupForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+function NewUser() {
+  const cloud_name="dgq5ru9fd"
+  const [newUser, setNewUser] = useState({
       name: "",
-      dateOfBirth: "",
+      dob: "",
       email: "",
       password: "",
       verifyPassword: "",
-      profilePicture: null,
       aboutYourself: "",
-    };
+    });
+  const inputsHandler = (e) => {
+    setNewUser((prevNext) => ({
+      ...prevNext,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const cloudHandler = (e) => {
+    const formData = new FormData(); 
+       
+    formData.append('file', e.target.files[0]);
+    formData.append("upload_preset", 'Userimages');
+ 
+ 
+  axios.post(`https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`, formData)
+      .then((res) => {      
+        const imageurl = res.data.secure_url;
+        newUser.imageURL=imageurl
+          setImage(imageurl)
+ 
+      })      
   }
-  handleInputChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    });
+  const onSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3000/users/create-user", newUser)
+      .then((res) => {
+        console.log(res.data);
+        setNewUser({
+          name: "",
+          dob: "",
+          email: "",
+          password: "",
+          verifyPassword: "",
+          aboutYourself: ""
+        });
+      });
   };
-  handleImageChange = (event) => {
-    this.setState({
-      profilePicture: event.target.files[0],
-    });
-  };
-  handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Form Data:", this.state);
-  };
-  render() {
+  
+
     return (
-      <div class="formContainer">
-        <form onSubmit={this.handleSubmit}>
-          <h2>Sign Up</h2>
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={this.state.name}
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="dateOfBirth">Date of Birth:</label>
-            <input
-              type="date"
-              id="dateOfBirth"
-              name="dateOfBirth"
-              value={this.state.dateOfBirth}
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={this.state.password}
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="verifyPassword">Verify Password:</label>
-            <input
-              type="password"
-              id="verifyPassword"
-              name="verifyPassword"
-              value={this.state.verifyPassword}
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <div>
-            
-          </div>
-          <div>
-            <label htmlFor="aboutYourself">About Yourself (optional):</label>
-            <textarea
-              id="aboutYourself"
-              name="aboutYourself"
-              value={this.state.aboutYourself}
-              onChange={this.handleInputChange}
-            />
-          </div>
+      <div className="formContainer">
+        <form onSubmit={onSubmit}>
+            <div>
+                <label htmlFor="blogName">Name: </label>
+                <input 
+                type="text"
+                name="name"
+                placeholder="name" 
+                id="name"
+                value={newUser.name}
+                onChange={inputsHandler}
+                required />
+            </div>
+            <div>
+                <label htmlFor="blogName">Date of Birth: </label>
+                <input 
+                type="text"
+                name="dob"
+                placeholder="dob" 
+                id="dob"
+                value={newUser.dob}
+                onChange={inputsHandler}
+                required />
+            </div>
+            <div>
+                <label htmlFor="blogName">Email: </label>
+                <input 
+                type="email"
+                name="email"
+                placeholder="email" 
+                id="email"
+                value={newUser.email}
+                onChange={inputsHandler}
+                required />
+            </div>
+            <div>
+                <label htmlFor="blogName">Password: </label>
+                <input 
+                type="password"
+                name="password"
+                placeholder="blog name" 
+                id="password"
+                value={newUser.password}
+                onChange={inputsHandler}
+                required />
+            </div>
+            <div>
+                <label htmlFor="blogName">Verify Password: </label>
+                <input 
+                type="text"
+                name="verifyPassword"
+                placeholder="blog name" 
+                id="verifyPassword"
+                value={newUser.verifyPassword}
+                onChange={inputsHandler}
+                required />
+            </div>
+            <div>
+                <label htmlFor="blogName">About Yourself: </label>
+                <input
+                type="text"
+                name="aboutYourself"
+                placeholder="blog name" 
+                id="aboutYourself"
+                value={newUser.aboutYourself}
+                onChange={inputsHandler}
+                required />
+            </div>
           <div>
             <button type="submit">Sign Up</button>
             {/* <button type="reset">Reset</button> */}
@@ -102,6 +127,5 @@ class SignupForm extends Component {
         </form>
       </div>
     );
-  }
-}
-export default SignupForm;
+    };
+export default NewUser;

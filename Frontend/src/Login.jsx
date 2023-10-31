@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-
+import './Login.css'
 function Login() {
 
 
     return(
         <>
-            <div>
-                <form>
+            <div className="LoginForm-container">
+                <form className="LoginForm">
                     <h1>Login</h1>
                     <div>
                         <label htmlFor="username">Username: </label>

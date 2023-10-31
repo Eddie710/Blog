@@ -1,0 +1,5 @@
+  .LoginForm-container{ display: flex; align-items: center; justify-content: center; background-color: #293646; min-height: 75vh;}
+.LoginForm{
+    background-color: white;
+    max-width: 500px;
+}

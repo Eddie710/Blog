@@ -31,6 +31,7 @@ function ViewBlog() {
     return (
         <>
             <div className="PostContainer">
+                <a href="/posted-blogs"><button id="moreButton">Go Back</button></a>
                 <div className="PostContainerB">
                     <img 
                     src={post.imageURL}

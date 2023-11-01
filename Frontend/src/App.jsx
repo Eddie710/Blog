@@ -25,7 +25,7 @@ function App() {
           <Route path="/newsletter" element={<NewLetter />} />
           <Route path="/browse/:postId" element={<View />} />
           <Route path="/signup" element={<SignupForm />} />
-          <Route path="login" element={<Login />}/>
+          <Route path="/login" element={<Login />}/>
         </Routes>
         <Footer />
     </div>

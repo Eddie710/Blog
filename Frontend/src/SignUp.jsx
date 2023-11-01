@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import axios from "axios";
 
 function NewUser() {
-  const cloud_name="dgq5ru9fd"
+  const cloud_name = "dgq5ru9fd";
   const [newUser, setNewUser] = useState({
-      name: "",
-      dob: "",
-      email: "",
-      password: "",
-      verifyPassword: "",
-      aboutYourself: "",
-    });
+    name: "",
+    email: "",
+    password: "",
+    aboutYourself: "",
+  });
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
+
+  useEffect(() => {
+    setIsSubmitDisabled(
+      newUser.name.length < 3 ||
+      newUser.email.length < 3 ||
+      newUser.password.length < 3
+    );
+  }, [newUser]);
+
   const inputsHandler = (e) => {
     setNewUser((prevNext) => ({
       ...prevNext,
@@ -19,20 +28,20 @@ function NewUser() {
   };
 
   const cloudHandler = (e) => {
-    const formData = new FormData(); 
-       
+    const formData = new FormData();
     formData.append('file', e.target.files[0]);
     formData.append("upload_preset", 'Userimages');
- 
- 
-  axios.post(`https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`, formData)
-      .then((res) => {      
+
+    axios.post(`https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`, formData)
+      .then((res) => {
         const imageurl = res.data.secure_url;
-        newUser.imageURL=imageurl
-          setImage(imageurl)
- 
-      })      
-  }
+        setNewUser((prevNext) => ({
+          ...prevNext,
+          imageURL: imageurl,
+        }));
+      });
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     axios
@@ -41,91 +50,85 @@ function NewUser() {
         console.log(res.data);
         setNewUser({
           name: "",
-          dob: "",
           email: "",
           password: "",
-          verifyPassword: "",
-          aboutYourself: ""
+          aboutYourself: "",
         });
       });
   };
-  
 
-    return (
-      <div className="formContainer">
-        <form onSubmit={onSubmit}>
-            <div>
-                <label htmlFor="blogName">Name: </label>
-                <input 
-                type="text"
-                name="name"
-                placeholder="name" 
-                id="name"
-                value={newUser.name}
-                onChange={inputsHandler}
-                required />
-            </div>
-            <div>
-                <label htmlFor="blogName">Date of Birth: </label>
-                <input 
-                type="text"
-                name="dob"
-                placeholder="1/1/2000" 
-                id="dob"
-                value={newUser.dob}
-                onChange={inputsHandler}
-                required />
-            </div>
-            <div>
-                <label htmlFor="blogName">Email: </label>
-                <input 
-                type="email"
-                name="email"
-                placeholder="email@email.com" 
-                id="email"
-                value={newUser.email}
-                onChange={inputsHandler}
-                required />
-            </div>
-            <div>
-                <label htmlFor="blogName">Password: </label>
-                <input 
-                type="password"
-                name="password"
-                placeholder="password" 
-                id="password"
-                value={newUser.password}
-                onChange={inputsHandler}
-                required />
-            </div>
-            <div>
-                <label htmlFor="blogName">Verify Password: </label>
-                <input 
-                type="text"
-                name="verifyPassword"
-                placeholder="confirm password" 
-                id="verifyPassword"
-                value={newUser.verifyPassword}
-                onChange={inputsHandler}
-                required />
-            </div>
-            <div>
-                <label htmlFor="blogName">About Yourself: </label>
-                <input
-                type="text"
-                name="aboutYourself"
-                placeholder="description (optional)" 
-                id="aboutYourself"
-                value={newUser.aboutYourself}
-                onChange={inputsHandler}
-                required />
-            </div>
-          <div>
-            <button type="submit">Sign Up</button>
-            {/* <button type="reset">Reset</button> */}
-          </div>
-        </form>
-      </div>
-    );
-    };
+  return (
+    <div className="formContainer">
+      <form onSubmit={onSubmit}>
+        <div>
+          <label htmlFor="blogName">Name: </label>
+          <input
+            type="text"
+            name="name"
+            placeholder="name"
+            id="name"
+            value={newUser.name}
+            onChange={inputsHandler}
+            required
+          />
+          {newUser.name.length < 3 && (
+            <p className="errorMessage">Name must be at least 3 characters long.</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="blogName">Email: </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="email"
+            id="email"
+            value={newUser.email}
+            onChange={inputsHandler}
+            required
+          />
+          {newUser.email.length < 3 && (
+            <p className="errorMessage">Email must be at least 3 characters long.</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="blogName">Password: </label>
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            id="password"
+            value={newUser.password}
+            onChange={inputsHandler}
+            required
+          />
+          {newUser.password.length < 3 && (
+            <p className="errorMessage">Password must be at least 3 characters long.</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="blogName">About Yourself: </label>
+          <textarea
+            type="text"
+            name="aboutYourself"
+            placeholder="I am..."
+            id="aboutYourself"
+            value={newUser.aboutYourself}
+            onChange={inputsHandler}
+          />
+        </div>
+        <div>
+          <button type="submit" disabled={isSubmitDisabled}>
+            Sign Up
+          </button>
+          {/* <button type="reset">Reset</button> */}
+        </div>
+        <p>Already have an account?</p>
+        <Link to={"/login"}>
+          <button id="LoginLink">Login</button>
+        </Link>
+      </form>
+    </div>
+  );
+}
+
 export default NewUser;

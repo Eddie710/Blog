@@ -4,7 +4,7 @@ import axios from "axios";
 import '../Blogs.css'
 function PostBlog() {
   const [newPost, setNewPost] = useState([]);
-
+//   const { postId } = useParams().postId
 
   useEffect(() => {
     axios
@@ -15,7 +15,10 @@ function PostBlog() {
       .catch((error) => {
         console.log(error);
       });
-  }, []); 
+  }, []); // Add an empty dependency array to run the effect only once
+
+  // Find the selected post based on postId
+//   const selectedPost = newPost.find((post) => post.id === postId);
 
   if (!newPost) {
     return <div>Post not found.</div>;

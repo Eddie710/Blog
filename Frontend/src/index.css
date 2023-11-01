@@ -101,6 +101,16 @@ p {margin: 0;}
 @media screen and (max-width: 500px){
   .headerBanner{ display: none;}
 }
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+
+input:invalid + .errorMessage {
+  display: block;
 @media screen and (max-width: 700px){
   .topRow{ display:grid; grid-template-rows: auto auto;}
   .popular div{ width:inherit; text-align: center;}

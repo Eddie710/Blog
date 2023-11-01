@@ -27,6 +27,7 @@ function PostBlog() {
       {newPost.map((e,i)=>{
         return <div className="indvBlog-cont">
           <h1 key={i}>{e.name}</h1>
+          <h5><b>By:</b> *username will go here</h5>
           <Link to={`/browse/${e._id}`}><button id="moreButton">Read More</button></Link>
         </div>
       })}

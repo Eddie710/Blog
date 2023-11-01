@@ -70,7 +70,7 @@ function NewUser() {
                 <input 
                 type="text"
                 name="dob"
-                placeholder="dob" 
+                placeholder="1/1/2000" 
                 id="dob"
                 value={newUser.dob}
                 onChange={inputsHandler}
@@ -81,7 +81,7 @@ function NewUser() {
                 <input 
                 type="email"
                 name="email"
-                placeholder="email" 
+                placeholder="email@email.com" 
                 id="email"
                 value={newUser.email}
                 onChange={inputsHandler}
@@ -92,7 +92,7 @@ function NewUser() {
                 <input 
                 type="password"
                 name="password"
-                placeholder="blog name" 
+                placeholder="password" 
                 id="password"
                 value={newUser.password}
                 onChange={inputsHandler}
@@ -103,7 +103,7 @@ function NewUser() {
                 <input 
                 type="text"
                 name="verifyPassword"
-                placeholder="blog name" 
+                placeholder="confirm password" 
                 id="verifyPassword"
                 value={newUser.verifyPassword}
                 onChange={inputsHandler}
@@ -114,7 +114,7 @@ function NewUser() {
                 <input
                 type="text"
                 name="aboutYourself"
-                placeholder="blog name" 
+                placeholder="description (optional)" 
                 id="aboutYourself"
                 value={newUser.aboutYourself}
                 onChange={inputsHandler}

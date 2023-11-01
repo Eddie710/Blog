@@ -17,6 +17,10 @@ function Login() {
                         <input type="password" name="password"/><br/>
                     </div>
                     <div><button type="submit">Submit</button></div>
+                    <div>
+                        <p>Don't have an account?</p>
+                        <a href="/signup">Register here!</a>
+                    </div>
                 </form>
             </div>
         </>

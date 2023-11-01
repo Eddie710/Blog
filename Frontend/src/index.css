@@ -101,3 +101,14 @@ p {margin: 0;}
 @media screen and (max-width: 500px){
   .headerBanner{ display: none;}
 }
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+
+input:invalid + .errorMessage {
+  display: block;
+}

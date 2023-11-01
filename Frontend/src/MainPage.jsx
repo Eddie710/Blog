@@ -27,7 +27,7 @@ export default function MainPage() {
               <div><Link to={"/newsletter"}>Sign Up</Link></div>
             </div>
         </div>
-        <h3 style={{color: "white", fontSize: "30px"}}>Popular Blogs</h3>
+        {/* <h3 style={{color: "white", fontSize: "30px"}}>Popular Blogs</h3>
         <div className="row2">
           <div className="blogContainer">
             <img className="blogImg" src="../public/stock.jpg" alt=" blog image" />
@@ -53,7 +53,7 @@ export default function MainPage() {
               <button className="cont-viewButton">Read more</button>
             </div>
           </div>
-        </div>
+        </div> */}
         <div id="browseMore-buttonLink">
           <Link to={"/posted-blogs"}>
             <button id="moreButton">Browse More</button>

@@ -3,3 +3,9 @@
     background-color: white;
     max-width: 500px;
 }
+
+.ErrorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}

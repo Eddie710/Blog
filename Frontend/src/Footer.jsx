@@ -6,6 +6,8 @@ const Footer = () => (
       <div className="Socials">
         <i class="bi bi-instagram">@foodeaze</i>
       </div>
+      <div></div>
+      <div></div>
     </div>
   </footer>
 );

@@ -15,10 +15,7 @@ function PostBlog() {
       .catch((error) => {
         console.log(error);
       });
-  }, []); // Add an empty dependency array to run the effect only once
-
-  // Find the selected post based on postId
-//   const selectedPost = newPost.find((post) => post.id === postId);
+  }, []); 
 
   if (!newPost) {
     return <div>Post not found.</div>;
@@ -29,8 +26,8 @@ function PostBlog() {
     <div className="blogsContainer">
       {newPost.map((e,i)=>{
         return <div className="indvBlog-cont">
-          <h1 key={i}>{e.name}</h1>
-          <h5><b>By:</b> *username will go here</h5>
+          <h1 key={i}>{e.restaurant}</h1>
+          <h5 key={i}><b>By: </b>{e.name}</h5>
           <Link to={`/browse/${e._id}`}><button id="moreButton">Read More</button></Link>
         </div>
       })}

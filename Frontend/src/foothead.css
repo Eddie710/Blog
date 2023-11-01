@@ -30,6 +30,10 @@ footer{
     min-height: 100px;
     padding: 20px;
 }
+.foot-columns{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
 #foodEaze-logo{ width: 80px; }
 @media screen and (max-width: 500px){
     #foodEaze-logo{display:none;}

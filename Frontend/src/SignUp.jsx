@@ -117,14 +117,14 @@ function NewUser() {
           />
         </div>
         <div>
-          <button type="submit" disabled={isSubmitDisabled}>
+          <button type="submit" className="submitButton" disabled={isSubmitDisabled}>
             Sign Up
           </button>
           {/* <button type="reset">Reset</button> */}
         </div>
         <p>Already have an account?</p>
         <Link to={"/login"}>
-          <button id="LoginLink">Login</button>
+          <button id="LoginLink" className="valid-button">Login</button>
         </Link>
       </form>
     </div>

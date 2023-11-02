@@ -1,3 +1,4 @@
+// Blog.js
 let mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -22,7 +23,7 @@ const userSchema = new Schema({
   },
   aboutYourself: {
     type: String,
-  }
+  },
   
 }, {
     collection: 'users',

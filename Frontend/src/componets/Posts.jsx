@@ -1,3 +1,4 @@
+//posts.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -57,11 +58,11 @@ return(
     <div className="formContainer">
         <form onSubmit={onSubmit}>
             <div>
-                <label htmlFor="blogName">Blog Name: </label>
+                <label htmlFor="blogName">Your Name: </label>
                 <input 
                 type="text"
                 name="name"
-                placeHolder="blog name" 
+                placeHolder="John Doe" 
                 id="name"
                 value={newPost.name}
                 onChange={inputsHandler}

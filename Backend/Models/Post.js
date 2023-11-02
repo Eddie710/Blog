@@ -1,3 +1,4 @@
+// post.js
 let mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 

@@ -1,3 +1,5 @@
+//SignUp.jsx
+
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
@@ -16,7 +18,7 @@ function NewUser() {
     setIsSubmitDisabled(
       newUser.name.length < 3 ||
       newUser.email.length < 3 ||
-      newUser.password.length < 3
+      newUser.password.length < 7
     );
   }, [newUser]);
 
@@ -101,8 +103,8 @@ function NewUser() {
             onChange={inputsHandler}
             required
           />
-          {newUser.password.length < 3 && (
-            <p className="errorMessage">Password must be at least 3 characters long.</p>
+          {newUser.password.length < 7 && (
+            <p className="errorMessage">Password must be at least 7 characters.</p>
           )}
         </div>
         <div>

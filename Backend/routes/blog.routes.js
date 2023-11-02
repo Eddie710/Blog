@@ -1,3 +1,5 @@
+// blog.routes.js
+
 let mongoose = require("mongoose"),
   express = require("express"),
   router = express.Router();
@@ -37,6 +39,21 @@ router.route("/post-page").post(async (req, res, next) => {
 });
 
 router.route("/blogs").get(async (req, res, next) => {
+  await postSchema
+    .find()
+    .then((result) => {
+      res.json({
+        data: result.reverse(),
+        message: "Data successfully got!",
+        status: 200,
+      });
+    })
+    .catch((err) => {
+      return next(err);
+    });
+});
+
+router.route("/login").get(async (req, res, next) => {
   await postSchema
     .find()
     .then((result) => {

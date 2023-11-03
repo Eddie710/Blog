@@ -38,8 +38,8 @@ function ViewBlog() {
                     <img 
                     src={post.imageURL}
                     alt="images" width="400px" height="400px" id="postImg" />
-                    <h1>{post.name}</h1>
-                    <h2>{post.restaurant}</h2>
+                    <h1>{post.restaurant}</h1>
+                    <h2>By: {post.name}</h2>
                     <p>{post.description}</p>
                     <p><b>Final Review:</b> {post.review}</p>
                 </div>

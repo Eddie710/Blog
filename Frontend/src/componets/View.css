@@ -9,8 +9,12 @@
 }
 .PostContainerB{
     background-color: white;
-    width: 500px;
+    min-width: 500px;
+    max-width: 1000px;
     padding: 20px;
     border-radius: 10px;
+}
+.PostContainerB p {
+    line-height: 1.75;
 }
 #postImg{width: 200px; height: auto;}

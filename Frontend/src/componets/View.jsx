@@ -41,7 +41,7 @@ function ViewBlog() {
                     <h1>{post.name}</h1>
                     <h2>{post.restaurant}</h2>
                     <p>{post.description}</p>
-                    <b>{post.review}</b>
+                    <p><b>Final Review:</b> {post.review}</p>
                 </div>
             </div>
         </>

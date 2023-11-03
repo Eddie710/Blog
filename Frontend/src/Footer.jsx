@@ -10,7 +10,7 @@ const Footer = () => (
         <p><a href="#"><i className="bi bi-facebook"></i> FoodEaze</a></p>
         <p><a href="#"><i class="bi bi-twitter"></i><i class="bi bi-twitter-x"></i> @foodeazereviews</a></p>
         <p><a href="#"><i class="bi bi-youtube"></i> FoodEaze Reviews</a></p>
-        <p><a href="#"><i class="bi bi-github"></i> FoodEaze</a></p>
+        <p><a href="https://github.com/Eddie710/Blog" target='_blank'><i class="bi bi-github"></i> FoodEaze</a></p>
       </div>
       <div>
         <h3>Quick Links</h3>

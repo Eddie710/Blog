@@ -1,10 +1,9 @@
 //SignUp.jsx
 
-import React, { useEffect, useState, useMemo } from "react";
-
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import bcrypt from 'bcryptjs';
+
 
 function NewUser() {
   const cloud_name = "dgq5ru9fd";
@@ -14,6 +13,8 @@ function NewUser() {
     password: "",
     aboutYourself: "",
   });
+
+
 
   const inputsHandler = (e) => {
     setNewUser((prevNext) => ({
@@ -37,10 +38,9 @@ function NewUser() {
       });
   };
 
-  const onSubmit = async(e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    
-      axios
+    axios
       .post("http://localhost:3000/users/create-user", newUser)
       .then((res) => {
         console.log(res.data);
@@ -50,69 +50,67 @@ function NewUser() {
           password: "",
           aboutYourself: "",
         });
-  });
-    
+      });
   };
-
-  useEffect(() => {
-    
-  }, [])
 
   return (
     <div className="formContainer">
       <form onSubmit={onSubmit}>
         <div>
-          <label htmlFor="blogName">Name: </label>
+          <label>Name: </label>
           <input
             type="text"
             name="name"
             placeholder="name"
             id="name"
+            value={newUser.name}
             onChange={inputsHandler}
             required
           />
         </div>
         <div>
-          <label htmlFor="blogName">Email: </label>
+          <label>Email: </label>
           <input
             type="email"
             name="email"
             placeholder="email"
             id="email"
+            value={newUser.email}
             onChange={inputsHandler}
             required
           />
         </div>
         <div>
-          <label htmlFor="blogName">Password: </label>
+          <label>Password: </label>
           <input
             type="password"
             name="password"
             placeholder="password"
             id="password"
+            value={newUser.password}
             onChange={inputsHandler}
             required
           />
         </div>
         <div>
-          <label htmlFor="blogName">About Yourself: </label>
+          <label>About Yourself: </label>
           <textarea
             type="text"
             name="aboutYourself"
             placeholder="I am..."
             id="aboutYourself"
+            value={newUser.aboutYourself}
             onChange={inputsHandler}
           />
         </div>
         <div>
-        <button type="submit">
-            Submit
+          <button type="submit">
+            Sign Up
           </button>
-          {/* <button type="reset">Reset</button> */}
         </div>
         <p>Already have an account?</p>
         <Link to={"/login"}>
-          <button id="LoginLink" className="valid-button">Login</button>
+          <button id="LoginLink">Login</button>
         </Link>
       </form>
     </div>

@@ -7,11 +7,14 @@ let mongoose = require("mongoose"),
 // Student Model
 let blogSchema = require("../Models/Blog");
 let postSchema = require("../Models/Post");
-
+const {Hash,unHash} = require('../Hash')
 router.route("/create-user").post(async (req, res, next) => {
+  console.log(req.body)
+ 
   await blogSchema
-    .create(req.body)
+    .create({...req.body,password:await Hash(req.body.password)})
     .then((result) => {
+      console.log(result)
       res.json({
         data: result,
         message: "Data successfully added!",
@@ -54,6 +57,7 @@ router.route("/blogs").get(async (req, res, next) => {
 });
 
 router.route("/login").get(async (req, res, next) => {
+  console.log(req.body)
   await postSchema
     .find()
     .then((result) => {
@@ -87,17 +91,6 @@ router.route("/browse/:id").get(async (req, res) => {
     });
 });
 
-router.route("/delete-student/:id").delete(async (req, res, next) => {
-  await postSchema
-    .findByIdAndRemove(req.params.id)
-    .then(() => {
-      res.json({
-        msg: "Data successfully deleted.",
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
+
 
 module.exports = router;

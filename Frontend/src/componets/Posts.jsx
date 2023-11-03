@@ -1,4 +1,3 @@
-//posts.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -30,7 +29,7 @@ function NewBlog() {
       .then((res) => {      
         const imageurl = res.data.secure_url;
         newPost.imageURL=imageurl
-          setImage(imageurl)
+          // setImage(imageurl)
  
       })      
   }

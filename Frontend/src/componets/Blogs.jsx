@@ -26,7 +26,7 @@ function PostBlog() {
     <div className="blogsContainer">
       {newPost.map((e,i)=>{
         return <div className="indvBlog-cont">
-          <h1 key={i}>{e.restaurant}</h1>
+          <h1 key={i} style={{"fontSize":"30px"}}>{e.restaurant}</h1>
           <h5 key={i}><b>By: </b>{e.name}</h5>
           <Link to={`/browse/${e._id}`}><button id="moreButton">Read More</button></Link>
         </div>

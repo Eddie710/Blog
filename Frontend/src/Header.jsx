@@ -13,11 +13,11 @@ const Header = () => (
         <div className="collapse navbar-collapse items-container" id="navbarTogglerDemo03">
           <img src="./foodeaze_logo.png" alt="foodEaze logo" id="foodEaze-logo" />
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item"><Link to={"/"} className="nav-link">Home</Link></li>
-            <li><Link to={"/post-page"} className="nav-link">Create Post</Link></li>
-            <li><Link to={"/posted-blogs"} className="nav-link">Browse Blogs</Link></li>
-            <li><Link to={"/signup"} className="nav-link">Sign Up</Link></li>
-            <li><Link to={"/login"} className="nav-link">Login</Link></li>
+            <li className="nav-item"><Link to={"/"} className="nav-link">Home <i class="bi bi-house"></i></Link></li>
+            <li><Link to={"/post-page"} className="nav-link">Create Post <i class="bi bi-file-earmark-plus"></i></Link></li>
+            <li><Link to={"/posted-blogs"} className="nav-link">Browse Blogs <i class="bi bi-eye"></i></Link></li>
+            <li><Link to={"/signup"} className="nav-link">Sign Up <i class="bi bi-person-plus"></i></Link></li>
+            <li><Link to={"/login"} className="nav-link">Login <i class="bi bi-box-arrow-in-right"></i></Link></li>
           </ul>
         </div>
       </div>

@@ -32,24 +32,26 @@ function Login() {
           <input
             type="text"
             name="username"
+            placeholder="username"
             onChange={handleChange}
             value={username}
           />
-          {usernameError && <p className="ErrorMessage">{usernameError}</p>}
         </div>
         <div>
           <label htmlFor="password">Password: </label>
           <input
             type="password"
             name="password"
+            placeholder="****"
             onChange={handleChange}
             value={password}
           />
-          {passwordError && <p className="ErrorMessage">{passwordError}</p>}
         </div>
         <div>
-          <button type="submit" disabled={!isValid}>
-            {isValid ? "Submit" : "Invalid"}
+          <button type="submit" 
+          className={isValid ? 'valid-button' : 'invalid-button'}
+          disabled={!isValid}>
+            {isValid ? "Login" : "Login"}
           </button>
         </div>
       </form>

@@ -1,9 +1,22 @@
-  .LoginForm-container{ display: flex; align-items: center; justify-content: center; background-color: #293646; min-height: 75vh;}
+  .LoginForm-container{ display: flex; align-items: center; justify-content: center; background-color: #293646; min-height: 80vh;}
 .LoginForm{
     background-color: white;
     max-width: 500px;
 }
-
+.valid-button{
+    padding: 10px;
+    background-color: #293646;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.invalid-button{
+    padding: 10px;
+    background-color: transparent;
+    color: #00000053;
+    border-radius: 5px;
+    cursor:auto;
+}
 .ErrorMessage {
   color: red;
   font-size: 14px;

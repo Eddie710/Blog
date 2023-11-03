@@ -32,9 +32,15 @@ footer{
 }
 .foot-columns{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
 }
-#foodEaze-logo{ width: 80px; }
+.Socials, .footerLinksList{
+    display: grid;
+    grid-template-columns: auto;
+}
+.footerLinksList{text-align: center;}
+.footerLinksList a, .Socials a { text-decoration: none; font-weight: 600; }
+#foodEaze-logo{ width: 80px; border-radius: 10px; }
 @media screen and (max-width: 500px){
     #foodEaze-logo{display:none;}
 }

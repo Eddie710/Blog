@@ -112,7 +112,7 @@ function NewUser() {
         </div>
         <p>Already have an account?</p>
         <Link to={"/login"}>
-          <button id="LoginLink">Login</button>
+          <button id="LoginLink" className="valid-button">Login</button>
         </Link>
       </form>
     </div>

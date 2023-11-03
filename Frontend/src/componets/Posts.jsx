@@ -110,7 +110,7 @@ return(
               onSubmit={inputsHandler} />
             </div>
               <div>
-                <button type="submit">Post</button>
+                <button type="submit" className="valid-button">Post</button>
             </div>
         </form>
     </div>   

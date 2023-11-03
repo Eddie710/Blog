@@ -28,36 +28,9 @@ export default function MainPage() {
               <div><Link to={"/newsletter"}>Sign Up</Link></div>
             </div>
         </div>
-        {/* <h3 style={{color: "white", fontSize: "30px"}}>Popular Blogs</h3>
-        <div className="row2">
-          <div className="blogContainer">
-            <img className="blogImg" src="../public/stock.jpg" alt=" blog image" />
-            <div className="contBottom">
-              <b>Popular Blog #1</b>
-              <p>Blog Author</p>
-              <button className="cont-viewButton">Read more</button>
-            </div>
-          </div>
-          <div className="blogContainer">
-            <img className="blogImg" src="../public/stock.jpg" alt=" blog image" />
-            <div className="contBottom">
-              <b>Popular Blog #2</b>
-              <p>Blog Author</p>
-              <button className="cont-viewButton">Read more</button>
-            </div>
-          </div>
-          <div className="blogContainer">
-            <img className="blogImg" src="../public/stock.jpg" alt=" blog image" />
-            <div className="contBottom">
-              <b>Popular Blog #3</b>
-              <p>Blog Author</p>
-              <button className="cont-viewButton">Read more</button>
-            </div>
-          </div>
-        </div> */}
         <div id="browseMore-buttonLink">
           <Link to={"/posted-blogs"}>
-            <button id="moreButton">Browse More</button>
+            <button id="moreButton">Browse Blogs</button>
           </Link>
         </div>
       </main>

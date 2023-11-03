@@ -11,5 +11,6 @@
     background-color: white;
     width: 500px;
     padding: 20px;
+    border-radius: 10px;
 }
 #postImg{width: 200px; height: auto;}

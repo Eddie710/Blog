@@ -31,6 +31,9 @@ function NewBlog() {
           ...prevNext,
           imageURL: imageurl,
         }));
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -47,6 +50,9 @@ function NewBlog() {
           review: "",
           imageURL: "",
         });
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -54,11 +60,11 @@ function NewBlog() {
     <div className="formContainer">
       <form onSubmit={onSubmit}>
         <div>
-          <label htmlFor="blogName">Blog Name: </label>
+          <label htmlFor="blogName">Your Name: </label>
           <input
             type="text"
             name="name"
-            placeholder="blog name"
+            placeholder="Name/Corporation"
             id="name"
             value={newPost.name}
             onChange={inputsHandler}
@@ -101,7 +107,7 @@ function NewBlog() {
           />
         </div>
         <div>
-          <label htmlFor="imageUrl"> Upload Image</label>
+          <label htmlFor="imageUrl">Upload Image</label>
           <input
             type="file"
             className="form-control"
@@ -109,9 +115,9 @@ function NewBlog() {
             id="image"
             onChange={cloudHandler}
           />
-        </div>
-        <div>
-          <button type="submit" className="valid-button">Post</button>
+          <button type="submit" className="valid-button">
+            Post
+          </button>
         </div>
       </form>
     </div>

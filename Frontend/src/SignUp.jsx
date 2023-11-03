@@ -1,8 +1,10 @@
 //SignUp.jsx
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
+
 import { Link } from 'react-router-dom';
 import axios from "axios";
+import bcrypt from 'bcryptjs';
 
 function NewUser() {
   const cloud_name = "dgq5ru9fd";
@@ -12,15 +14,6 @@ function NewUser() {
     password: "",
     aboutYourself: "",
   });
-  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
-
-  useEffect(() => {
-    setIsSubmitDisabled(
-      newUser.name.length < 3 ||
-      newUser.email.length < 3 ||
-      newUser.password.length < 7
-    );
-  }, [newUser]);
 
   const inputsHandler = (e) => {
     setNewUser((prevNext) => ({
@@ -44,9 +37,10 @@ function NewUser() {
       });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async(e) => {
     e.preventDefault();
-    axios
+    
+      axios
       .post("http://localhost:3000/users/create-user", newUser)
       .then((res) => {
         console.log(res.data);
@@ -56,8 +50,13 @@ function NewUser() {
           password: "",
           aboutYourself: "",
         });
-      });
+  });
+    
   };
+
+  useEffect(() => {
+    
+  }, [])
 
   return (
     <div className="formContainer">
@@ -69,13 +68,9 @@ function NewUser() {
             name="name"
             placeholder="name"
             id="name"
-            value={newUser.name}
             onChange={inputsHandler}
             required
           />
-          {newUser.name.length < 3 && (
-            <p className="errorMessage">Name must be at least 3 characters long.</p>
-          )}
         </div>
         <div>
           <label htmlFor="blogName">Email: </label>
@@ -84,13 +79,9 @@ function NewUser() {
             name="email"
             placeholder="email"
             id="email"
-            value={newUser.email}
             onChange={inputsHandler}
             required
           />
-          {newUser.email.length < 3 && (
-            <p className="errorMessage">Email must be at least 3 characters long.</p>
-          )}
         </div>
         <div>
           <label htmlFor="blogName">Password: </label>
@@ -99,13 +90,9 @@ function NewUser() {
             name="password"
             placeholder="password"
             id="password"
-            value={newUser.password}
             onChange={inputsHandler}
             required
           />
-          {newUser.password.length < 7 && (
-            <p className="errorMessage">Password must be at least 7 characters.</p>
-          )}
         </div>
         <div>
           <label htmlFor="blogName">About Yourself: </label>
@@ -114,13 +101,12 @@ function NewUser() {
             name="aboutYourself"
             placeholder="I am..."
             id="aboutYourself"
-            value={newUser.aboutYourself}
             onChange={inputsHandler}
           />
         </div>
         <div>
-          <button type="submit" disabled={isSubmitDisabled}>
-            Sign Up
+        <button type="submit">
+            Submit
           </button>
           {/* <button type="reset">Reset</button> */}
         </div>

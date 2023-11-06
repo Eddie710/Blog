@@ -2,7 +2,6 @@
 import React, { useState, useMemo } from "react";
 import "./Login.css";
 import axios from 'axios';
-
 function Login() {
   const [loginInfo, setLoginInfo] = useState({
     name: "",
@@ -58,7 +57,7 @@ function Login() {
             type="password"
             id="password"
             name="password"
-            placeholder="***"
+            placeholder="********"
             onChange={handleChange}
           />
         </div>
@@ -69,6 +68,8 @@ function Login() {
             {isValid ? "Login" : "Login"}
           </button>
         </div>
+        <h4>Don't have an account?</h4>
+        <p>Sign up <a href="/signup">Here!</a></p>
       </form>
     </div>
   );

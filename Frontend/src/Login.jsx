@@ -1,50 +1,65 @@
 //Login.jsx
 import React, { useState, useMemo } from "react";
 import "./Login.css";
+import axios from 'axios';
 
 function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [loginInfo, setLoginInfo] = useState({
+    name: "",
+    password: ""
+  });
   const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  const isValid = useMemo(() => {
-    return username.length >= 3 && password.length >= 3;
-  }, [username, password]);
+  const isValid = true;
+  // const isValid = useMemo(() => {
+  //   console.log(document.getElementById("username"))
+  //   return document.getElementById("username").value >= 3 && document.getElementById("password").value >= 3;
+  // }, [loginInfo]);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    if (name === "username") {
-      setUsername(value);
-      setUsernameError(value.length < 3 ? "Username must have at least 3 characters" : "");
-    } else if (name === "password") {
-      setPassword(value);
-      setPasswordError(value.length < 3 ? "Password must have at least 3 characters" : "");
-    }
-  };
+  const handleChange = (e) => {
+    setLoginInfo(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
+  }
+  const handleSubmit =(event)=>{
+    event.preventDefault();
+    axios
+      .post("http://localhost:3000/users/login", loginInfo)
+      .then(res => {
+        if (res.data.data != 'Incorrect Password') {
+          localStorage.setItem('accLoggedInto',JSON.stringify(res.data.data[0]))
+        } else {
+          console.log(res.data.data);
+          // if passwords incorrect
+        }
+        
+      })
 
+  }
   return (
     <div className="LoginForm-container">
-      <form className="LoginForm">
+      <form className="LoginForm" onSubmit={handleSubmit}>
         <h1>Login</h1>
         <div>
           <label htmlFor="username">Username: </label>
           <input
             type="text"
-            name="username"
+            id="name"
+            name="name"
             placeholder="username"
             onChange={handleChange}
-            value={username}
           />
         </div>
         <div>
           <label htmlFor="password">Password: </label>
           <input
             type="password"
+            id="password"
             name="password"
-            placeholder="****"
+            placeholder="***"
             onChange={handleChange}
-            value={password}
           />
         </div>
         <div>

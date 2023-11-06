@@ -18,6 +18,7 @@ const Header = () => (
             <li><Link to={"/posted-blogs"} className="nav-link">Browse Blogs <i class="bi bi-eye"></i></Link></li>
             <li><Link to={"/signup"} className="nav-link">Sign Up <i class="bi bi-person-plus"></i></Link></li>
             <li><Link to={"/login"} className="nav-link">Login <i class="bi bi-box-arrow-in-right"></i></Link></li>
+            <h5>{JSON.parse(localStorage.getItem("accLoggedInto")).name}</h5>
           </ul>
         </div>
       </div>

@@ -1,17 +1,17 @@
 // blog.routes.js
-
+const bcrypt = require('bcrypt');
 let mongoose = require("mongoose"),
   express = require("express"),
   router = express.Router();
 
 // Student Model
-let blogSchema = require("../Models/Blog");
+let userSchema = require("../Models/User");
 let postSchema = require("../Models/Post");
 const {Hash,unHash} = require('../Hash')
 router.route("/create-user").post(async (req, res, next) => {
   console.log(req.body)
  
-  await blogSchema
+  await userSchema
     .create({...req.body,password:await Hash(req.body.password)})
     .then((result) => {
       console.log(result)
@@ -56,16 +56,25 @@ router.route("/blogs").get(async (req, res, next) => {
     });
 });
 
-router.route("/login").get(async (req, res, next) => {
+router.route("/login").post(async (req, res, next) => {
   console.log(req.body)
-  await postSchema
-    .find()
+  await userSchema
+    .find({name: req.body.name})
     .then((result) => {
-      res.json({
-        data: result.reverse(),
-        message: "Data successfully got!",
-        status: 200,
-      });
+      bcrypt.compare(req.body.password, result[0].password, function(err, same) {
+        if (same) {
+          res.json({
+            data: result,
+            message: "Data successfully got!",
+            status: 200,
+          });
+        } else {
+          res.json({
+            data: 'Incorrect Password'
+          })
+        }
+      })
+      
     })
     .catch((err) => {
       return next(err);

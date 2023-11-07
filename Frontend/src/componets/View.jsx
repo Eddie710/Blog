@@ -19,7 +19,6 @@ function ViewBlog() {
                 setPost(await data.data[0]);
               
             } catch (error) {
-                ///console.error(error);
             }
         };
 

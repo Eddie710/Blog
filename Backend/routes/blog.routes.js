@@ -7,6 +7,7 @@ let mongoose = require("mongoose"),
 // Student Model
 let userSchema = require("../Models/User");
 let postSchema = require("../Models/Post");
+
 const {Hash,unHash} = require('../Hash')
 router.route("/create-user").post(async (req, res, next) => {
   console.log(req.body)

@@ -11,10 +11,6 @@ function Login() {
   const [passwordError, setPasswordError] = useState("");
 
   const isValid = true;
-  // const isValid = useMemo(() => {
-  //   console.log(document.getElementById("username"))
-  //   return document.getElementById("username").value >= 3 && document.getElementById("password").value >= 3;
-  // }, [loginInfo]);
 
   const handleChange = (e) => {
     setLoginInfo(prev => ({

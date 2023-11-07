@@ -5,7 +5,6 @@ import axios from "axios";
 function LogoutButton() {
   const handleLogout = () => {
     localStorage.clear();
-    alert('Logged out successfully!');
     window.location.reload();
   };
 

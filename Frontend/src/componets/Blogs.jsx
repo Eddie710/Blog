@@ -4,7 +4,6 @@ import axios from "axios";
 import '../Blogs.css'
 function PostBlog() {
   const [newPost, setNewPost] = useState([]);
-//   const { postId } = useParams().postId
 
   useEffect(() => {
     axios

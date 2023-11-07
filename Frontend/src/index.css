@@ -102,18 +102,33 @@ p {margin: 0;}
 @media screen and (max-width: 500px){
   .headerBanner{ display: none;}
 }
-
+#submitButton, #LoginLink, #Logout{
+  background-color: #fff;
+  color: black;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s; 
+  width: 100px;
+}
+#submitButton:hover, #LoginLink:hover{background-color: #293646; color:white; transition: 0.3s;}
+#Logout:hover{background-color: rgb(156, 0, 0); color: white; transition: 0.3s;}
 .errorMessage {
   color: red;
   font-size: 14px;
   margin-top: 5px;
   display: none;
 }
-
-input:invalid + .errorMessage {
-  display: block;
+#log-in-out-buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
 }
-
+input:invalid + .errorMessage {display: block;}
+@media screen and (max-width: 1100px){
+  #aboutYourself{ width: 300px;}
+}
 @media screen and (max-width: 700px) {
   .topRow {
     display: grid;
@@ -127,4 +142,6 @@ input:invalid + .errorMessage {
     display: grid;
     grid-template-rows: auto auto auto;
   }
+  #aboutYourself{ width: 200px; height: 200px;}
+  #log-in-out-buttons{ flex-direction: column; }
 }

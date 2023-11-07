@@ -13,10 +13,10 @@ const Header = () => (
         <div className="collapse navbar-collapse items-container" id="navbarTogglerDemo03">
           <img src="./foodeaze_logo.png" alt="foodEaze logo" id="foodEaze-logo" />
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item"><Link to={"/"} className="nav-link">Home <i class="bi bi-house"></i></Link></li>
-            <li><Link to={"/post-page"} className="nav-link">Create Post <i class="bi bi-file-earmark-plus"></i></Link></li>
-            <li><Link to={"/posted-blogs"} className="nav-link">Browse Blogs <i class="bi bi-eye"></i></Link></li>
-            <li><Link to={"/signup"} className="nav-link">Sign Up <i class="bi bi-person-plus"></i></Link></li>
+            <li className="nav-item"><Link to={"/"} className="nav-link">Home <i className="bi bi-house"></i></Link></li>
+            <li><Link to={"/post-page"} className="nav-link">Create Post <i className="bi bi-file-earmark-plus"></i></Link></li>
+            <li><Link to={"/posted-blogs"} className="nav-link">Browse Blogs <i className="bi bi-eye"></i></Link></li>
+            <li><Link to={"/signup"} className="nav-link">Sign Up <i className="bi bi-person-plus"></i></Link></li>
             <li><h5>{(localStorage.getItem("accLoggedInto") != null? JSON.parse(localStorage.getItem("accLoggedInto")).name : '')}</h5></li>
           </ul>
         </div>

@@ -110,16 +110,22 @@ function NewUser() {
           />
         </div>
         <div>
-          <button type="submit">
+          <button type="submit" id="submitButton">
             Sign Up
           </button>
+        </div><br />
+        <div id="log-in-out-buttons">
+            <div>
+              <p>Already have an account?</p>
+              <Link to={"/login"}>
+                <button id="LoginLink">Login</button>
+              </Link>
+            </div>
+            <div style={{"display":"flex", "justifyContent":"center", "alignItems":"center", "flexDirection":"column"}}>
+              <p>Want to sign out?</p>
+              <LogoutButton />
+            </div>
         </div>
-        <p>Already have an account?</p>
-        <Link to={"/login"}>
-          <button id="LoginLink">Login</button>
-        </Link>
-        <p>Want to sign out?</p>
-        <LogoutButton />
       </form>
     </div>
   );

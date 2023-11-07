@@ -10,7 +10,6 @@ import { Router, Routes, Route, Link} from 'react-router-dom'
 import NewLetter from "./componets/Newsletter.jsx";
 import NewBlog from './componets/Posts.jsx'
 import SignupForm from './SignUp.jsx'
-//App.jsx
 import Login from './Login.jsx'
 
 function App() {
@@ -30,13 +29,10 @@ function App() {
         </Routes>
         <Footer />
     </div>
-        
-    
     </>
   );
 }
 
-  
   export default App;
 
 

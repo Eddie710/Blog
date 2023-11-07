@@ -29,9 +29,10 @@ function Login() {
       .then(res => {
         if (res.data.data != 'Incorrect Password') {
           localStorage.setItem('accLoggedInto',JSON.stringify(res.data.data[0]))
+          window.location.reload();
         } else {
           console.log(res.data.data);
-          // if passwords incorrect
+          
         }
         
       })

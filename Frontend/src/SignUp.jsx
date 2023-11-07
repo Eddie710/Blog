@@ -1,9 +1,17 @@
-//SignUp.jsx
-
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
 
+function LogoutButton() {
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
+  return (
+    <button id="Logout" onClick={handleLogout}>Logout</button>
+  );
+}
 
 function NewUser() {
   const cloud_name = "dgq5ru9fd";
@@ -13,8 +21,6 @@ function NewUser() {
     password: "",
     aboutYourself: "",
   });
-
-
 
   const inputsHandler = (e) => {
     setNewUser((prevNext) => ({
@@ -112,6 +118,8 @@ function NewUser() {
         <Link to={"/login"}>
           <button id="LoginLink">Login</button>
         </Link>
+        <p>Want to sign out?</p>
+        <LogoutButton />
       </form>
     </div>
   );

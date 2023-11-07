@@ -33,5 +33,4 @@ function PostBlog() {
     </div>
   );
 }
-
 export default PostBlog;

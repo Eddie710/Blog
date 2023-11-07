@@ -57,11 +57,11 @@ function NewUser() {
     <div className="formContainer">
       <form onSubmit={onSubmit}>
         <div>
-          <label>Name: </label>
+          <label>Username: </label>
           <input
             type="text"
             name="name"
-            placeholder="name"
+            placeholder="username"
             id="name"
             value={newUser.name}
             onChange={inputsHandler}

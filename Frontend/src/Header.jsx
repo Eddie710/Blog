@@ -17,7 +17,7 @@ const Header = () => (
             <li><Link to={"/post-page"} className="nav-link">Create Post <i class="bi bi-file-earmark-plus"></i></Link></li>
             <li><Link to={"/posted-blogs"} className="nav-link">Browse Blogs <i class="bi bi-eye"></i></Link></li>
             <li><Link to={"/signup"} className="nav-link">Sign Up <i class="bi bi-person-plus"></i></Link></li>
-            <h5>{(localStorage.getItem("accLoggedInto") != null? JSON.parse(localStorage.getItem("accLoggedInto")).name : '')}</h5>
+            <li><h5>{(localStorage.getItem("accLoggedInto") != null? JSON.parse(localStorage.getItem("accLoggedInto")).name : '')}</h5></li>
           </ul>
         </div>
       </div>

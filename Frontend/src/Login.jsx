@@ -26,21 +26,21 @@ function Login() {
       .then(res => {
         if (res.data.data != 'Incorrect Password') {
           localStorage.setItem('accLoggedInto',JSON.stringify(res.data.data[0]))
-          window.location.reload();
+          window.location.pathname = '/';
         } else {
+          window.location.reload()
           console.log(res.data.data);
           
         }
         
       })
-
   }
   return (
     <div className="LoginForm-container">
       <form className="LoginForm" onSubmit={handleSubmit}>
         <h1>Login</h1>
         <div>
-          <label htmlFor="username">Username: </label>
+          <label htmlFor="name">Username: </label>
           <input
             type="text"
             id="name"
@@ -67,7 +67,7 @@ function Login() {
           </button>
         </div>
         <h4>Don't have an account?</h4>
-        <p>Sign up <a href="/signup">Here!</a></p>
+        <p>Sign up <a href="/signup" style={{textDecoration:'none'}}>Here!</a></p>
       </form>
     </div>
   );

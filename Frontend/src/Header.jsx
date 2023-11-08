@@ -1,7 +1,15 @@
 //Header.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+function LogoutButton() {
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.pathname = '/login';
+  };
+  return (
+    <button id="Logout" onClick={handleLogout}>Logout</button>
+  );
+}
 const Header = () => (
   <header>
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -16,8 +24,9 @@ const Header = () => (
             <li className="nav-item"><Link to={"/"} className="nav-link">Home <i className="bi bi-house"></i></Link></li>
             <li><Link to={"/post-page"} className="nav-link">Create Post <i className="bi bi-file-earmark-plus"></i></Link></li>
             <li><Link to={"/posted-blogs"} className="nav-link">Browse Blogs <i className="bi bi-eye"></i></Link></li>
-            <li><Link to={"/signup"} className="nav-link">Sign Up <i className="bi bi-person-plus"></i></Link></li>
+            <li><Link to={"/login"} className="nav-link">Login <i className="bi bi-person-plus"></i></Link></li>
             <li><h5>{(localStorage.getItem("accLoggedInto") != null? JSON.parse(localStorage.getItem("accLoggedInto")).name : '')}</h5></li>
+            <li><LogoutButton /></li>
           </ul>
         </div>
       </div>

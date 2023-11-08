@@ -5,7 +5,7 @@ import axios from "axios";
 function LogoutButton() {
   const handleLogout = () => {
     localStorage.clear();
-    window.location.reload();
+    window.location.pathname = '/login';
   };
 
   return (

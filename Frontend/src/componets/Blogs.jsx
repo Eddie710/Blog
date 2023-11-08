@@ -19,8 +19,6 @@ function PostBlog() {
   if (!newPost) {
     return <div>Post not found.</div>;
   } 
-  console.log(newPost)
-
   return (
     <div className="blogsContainer">
       {newPost.map((e,i)=>{

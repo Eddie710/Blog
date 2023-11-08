@@ -7,8 +7,6 @@ function Login() {
     name: "",
     password: ""
   });
-  const [usernameError, setUsernameError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
 
   const isValid = true;
 
